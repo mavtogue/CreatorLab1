@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import { supabase } from '../lib/supabase';
+import Navbar from '../components/Navbar.astro';
+import { LoginModal, RegisterModal } from '../components/AuthModals';
+import Footer from '../components/Footer.astro';
+import ProfileModal from '../components/ProfileModal';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="CreatorLab - Plataforma para creadores de contenido" />
+  </head>
+  <body class="min-h-screen text-white content-wrapper">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <LoginModal client:load />
+    <RegisterModal client:load />
+    <ProfileModal client:load />
+    
+    <script>
+      // Inicializar auth cuando el DOM esté listo
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          const { initAuth } = await import('../lib/auth');
+          await initAuth();
+        } catch (error) {
+          console.error('Error al inicializar auth:', error);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

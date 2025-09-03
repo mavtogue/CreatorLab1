@@ -1,0 +1,283 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+  <!-- Imagen de fondo del Hero con botones y badge integrados -->
+  <div class="absolute inset-0 z-0 flex items-start justify-center" style="padding-top: 80px; padding-bottom: 60px;">
+    <div class="relative">
+      <img src="/images/MAIN.png" alt="Hero Background" class="w-[1600px] h-auto object-contain" />
+      
+      {/* Botones - MANTENIDOS */}
+      <div class="absolute bottom-36 left-36 flex flex-col sm:flex-row gap-4">
+        <button id="hero-cta" class="btn-primary">Comenzar</button>
+        <button id="hero-login" class="btn-secondary">Iniciar Sesión</button>
+      </div>
+      
+      {/* Badge flotante - MANTENIDO */}
+      <div class="absolute bottom-32 right-16 bg-redvelvet text-white py-2 px-4 rounded-lg shadow-lg transform rotate-3 animate-float">
+        <p class="font-bold">Crecimiento promedio: 270%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 z-10 pt-24">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+      {/* Text content - OCULTADO TEMPORALMENTE */}
+      {/* <div class="lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 tracking-tight text-white">
+          Potencia tu Presencia en <span class="text-redvelvet">YouTube</span>
+        </h1>
+        <p class="text-xl text-neutral-gray mb-8 max-w-2xl mx-auto lg:mx-0">
+          Transforma tu canal con estrategias expertas, análisis avanzados y métodos probados para aumentar vistas, suscriptores y engagement.
+        </p>
+      </div> */}
+      
+      {/* Stats - OCULTADAS TEMPORALMENTE */}
+      {/* <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+        <div class="text-center p-4">
+          <p class="text-3xl md:text-4xl font-bold text-redvelvet">2.5M+</p>
+          <p class="text-neutral-gray">Visualizaciones Generadas</p>
+        </div>
+        <div class="text-center p-4">
+          <p class="text-3xl md:text-4xl font-bold text-redvelvet">10K+</p>
+          <p class="text-neutral-gray">Creadores Ayudados</p>
+        </div>
+        <div class="text-center p-4 col-span-2 md:col-span-1">
+          <p class="text-3xl md:text-4xl font-bold text-redvelvet">97%</p>
+          <p class="text-neutral-gray">Tasa de Crecimiento</p>
+        </div>
+      </div> */}
+      
+      {/* Video/Image showcase - OCULTADO TEMPORALMENTE */}
+      {/* <div class="lg:w-1/2 relative">
+        <div class="w-full h-full bg-neutral-gray/10 rounded-xl overflow-hidden shadow-xl relative">
+          <div class="aspect-video relative overflow-hidden rounded-xl border border-neutral-gray/30">
+            <div class="absolute inset-0 bg-gradient-to-br from-wineblack via-neutral-gray/20 flex items-center justify-center">
+              <div class="p-6 text-center">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-redvelvet flex items-center justify-center animate-pulse">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <p class="text-white text-lg">Descubre Cómo Funciona CreatorLab</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+    </div>
+  </div>
+</section>
+
+      <!-- Imagen NUMEROS.png DEBAJO del Hero -->
+      <section class="w-full flex justify-center items-center -mt-20 numeros-responsive">
+        <img src="/images/NUMEROS.png" alt="Números y Estadísticas" class="w-[900px] h-auto" />
+      </section>
+
+      <!-- Espaciado antes del slider -->
+      <div class="py-20"></div>
+      
+      <!-- Botón decorativo "Confían en Nosotros" -->
+      <div class="w-full flex justify-center items-center mb-2">
+        <button class="confian-button">
+          Confían en Nosotros
+        </button>
+      </div>
+      
+      <!-- Slider infinito de marcas -->
+      <div class="w-full flex justify-center">
+        <div class="brands-slider">
+          <div class="brands-track">
+            <!-- Primera fila de logos -->
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 1</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 2</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 3</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 4</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 5</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 6</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 7</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 8</span>
+              </div>
+            </div>
+            
+            <!-- Duplicar para efecto infinito -->
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 1</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 2</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 3</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 4</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 5</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 6</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 7</span>
+              </div>
+            </div>
+            <div class="brand-item">
+              <div class="brand-logo">
+                <span class="text-white text-3xl font-bold">LOGO 8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<script>
+  // Trigger the register modal when the hero CTA is clicked
+  document.getElementById('hero-cta')?.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('open-register-modal'));
+  });
+
+  document.getElementById('hero-login')?.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('open-login-modal'));
+  });
+
+
+</script>
+
+<style>
+  .brands-slider {
+    width: 1920px;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 2rem 0;
+  }
+
+  .brands-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .brand-item {
+    flex: 0 0 auto;
+    margin-right: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-logo {
+    width: 240px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid rgba(217, 217, 217, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .brand-logo:hover {
+    background: rgba(217, 217, 217, 0.1);
+    border: 2px solid rgba(217, 217, 217, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(217, 217, 217, 0.3);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pausar animación al hacer hover */
+  .brands-slider:hover .brands-track {
+    animation-play-state: paused;
+  }
+
+  /* Botón decorativo "Confían en Nosotros" */
+  .confian-button {
+    @apply text-white px-10 py-5 rounded-2xl font-bold text-2xl transition-all duration-300;
+    background: linear-gradient(to bottom, transparent, rgba(255, 0, 55, 0.3));
+    border: 1px solid rgba(255, 0, 55, 0.4);
+    box-shadow: 0 0 20px rgba(255, 0, 55, 0.2), 0 0 40px rgba(255, 0, 55, 0.1);
+    backdrop-filter: blur(10px);
+    cursor: default;
+  }
+
+  .confian-button:hover {
+    background: linear-gradient(to bottom, transparent, rgba(255, 0, 55, 0.5));
+    border: 1px solid rgba(255, 0, 55, 0.6);
+    box-shadow: 0 0 30px rgba(255, 0, 55, 0.4), 0 0 60px rgba(255, 0, 55, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .brand-logo {
+      width: 180px;
+      height: 80px;
+    }
+    
+    .brand-item {
+      margin-right: 1.5rem;
+    }
+    
+    .confian-button {
+      @apply text-xl px-8 py-4;
+    }
+  }
+</style>

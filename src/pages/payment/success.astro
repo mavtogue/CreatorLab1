@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { FaCheckCircle, FaDiscord, FaRocket, FaGift } from 'react-icons/fa';
+---
+
+<Layout title="¡Pago Exitoso! - CreatorLab">
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-wineblack via-wineblack to-neutral-gray/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Success Icon -->
+        <div class="mb-8">
+          <div class="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <FaCheckCircle className="w-12 h-12 text-green-500" />
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            ¡Pago <span class="text-green-500">Exitoso</span>!
+          </h1>
+          <p class="text-xl text-neutral-gray mb-8">
+            Tu suscripción ha sido activada correctamente. ¡Bienvenido a CreatorLab!
+          </p>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="bg-neutral-gray/10 backdrop-blur-md p-8 rounded-xl shadow-lg mb-8">
+          <h2 class="text-2xl font-bold text-white mb-6">Próximos Pasos</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-redvelvet/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaDiscord className="w-8 h-8 text-redvelvet" />
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Unirse al Discord</h3>
+              <p class="text-neutral-gray text-sm">
+                Recibirás una invitación por email para unirte a nuestro servidor exclusivo.
+              </p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-redvelvet/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaRocket className="w-8 h-8 text-redvelvet" />
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Acceso Inmediato</h3>
+              <p class="text-neutral-gray text-sm">
+                Ya tienes acceso a todos los recursos y beneficios de tu plan.
+              </p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-redvelvet/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaGift className="w-8 h-8 text-redvelvet" />
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Recursos Exclusivos</h3>
+              <p class="text-neutral-gray text-sm">
+                Explora nuestra biblioteca de contenido y herramientas premium.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="btn-primary">
+            <FaDiscord className="inline mr-2" />
+            Ir al Discord
+          </button>
+          <button class="btn-secondary" onclick="window.location.href='/'">
+            Volver al Inicio
+          </button>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-12 text-neutral-gray">
+          <p class="mb-2">
+            <strong>¿Tienes preguntas?</strong> Nuestro equipo de soporte está disponible 24/7.
+          </p>
+          <p class="text-sm">
+            Recibirás un email de confirmación con todos los detalles de tu suscripción.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Verificar si hay session_id en la URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const sessionId = urlParams.get('session_id');
+  
+  if (sessionId) {
+    // Aquí podrías hacer una llamada a tu API para verificar el estado del pago
+    console.log('Session ID:', sessionId);
+  }
+</script> 

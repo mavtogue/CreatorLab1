@@ -1,0 +1,235 @@
+---
+import { supabase } from '../lib/supabase';
+import UserMenu from './UserMenu';
+import type { Session } from '@supabase/supabase-js';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img src="/logos/NAMEWHITE.png" alt="CreatorLab Logo" class="h-6 w-auto" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center">
+        <div class="nav-container">
+          <a href="#servicios" class="nav-link">Servicios</a>
+          <a href="#nosotros" class="nav-link">Nosotros</a>
+          <a href="#testimonios" class="nav-link">Testimonios</a>
+          <a href="#estadisticas" class="nav-link">Estadísticas</a>
+        </div>
+      </nav>
+
+      <!-- Community Button & Auth -->
+      <div class="flex items-center space-x-6">
+        <a href="/comunidad" class="bg-redvelvet text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all font-medium">
+          Comunidad
+        </a>
+        
+        <!-- Discord Button (only when logged in) -->
+        <div id="discord-button-container" class="hidden">
+          <a 
+            href="https://discord.gg/h77v7P37G3" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="bg-[#5865F2] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all font-medium flex items-center space-x-2"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            <span>Discord</span>
+          </a>
+        </div>
+        
+        <!-- Auth Buttons / User Menu -->
+        <div class="flex items-center space-x-4">
+          <div id="auth-buttons" class="flex items-center space-x-4">
+            <button
+              onclick="document.dispatchEvent(new CustomEvent('open-login-modal'))"
+              class="text-white hover:text-redvelvet transition-colors"
+            >
+              Iniciar Sesión
+            </button>
+            <button
+              onclick="document.dispatchEvent(new CustomEvent('open-register-modal'))"
+              class="bg-redvelvet text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
+            >
+              Registrarse
+            </button>
+          </div>
+          <div id="user-menu-container" class="hidden">
+            <UserMenu client:load />
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden text-white hover:text-redvelvet transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden mt-4">
+      <nav class="flex flex-col space-y-4">
+        <a href="#servicios" class="text-white hover:text-redvelvet transition-colors">Servicios</a>
+        <a href="#nosotros" class="text-white hover:text-redvelvet transition-colors">Nosotros</a>
+        <a href="#testimonios" class="text-white hover:text-redvelvet transition-colors">Testimonios</a>
+        <a href="#estadisticas" class="text-white hover:text-redvelvet transition-colors">Estadísticas</a>
+      </nav>
+      
+      <!-- Mobile Community Button -->
+      <div class="mt-4">
+        <a href="/comunidad" class="w-full bg-redvelvet text-white px-4 py-3 rounded-md hover:bg-opacity-90 transition-all font-medium text-center block">
+          Comunidad
+        </a>
+      </div>
+      
+      <!-- Mobile Auth Buttons -->
+      <div id="mobile-auth-buttons" class="mt-4 space-y-4">
+        <button
+          onclick="document.dispatchEvent(new CustomEvent('open-login-modal'))"
+          class="w-full text-white hover:text-redvelvet transition-colors"
+        >
+          Iniciar Sesión
+        </button>
+        <button
+          onclick="document.dispatchEvent(new CustomEvent('open-register-modal'))"
+          class="w-full bg-redvelvet text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
+        >
+          Registrarse
+        </button>
+      </div>
+      
+      <!-- Mobile User Menu -->
+      <div id="mobile-user-menu" class="hidden mt-4">
+        <UserMenu client:load />
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { supabase } from '../lib/supabase';
+  import type { Session } from '@supabase/supabase-js';
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Scroll effect
+  let lastScroll = 0;
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      header?.classList.remove('scroll-up');
+      return;
+    }
+
+    if (currentScroll > lastScroll && !header?.classList.contains('scroll-down')) {
+      // Scroll Down
+      header?.classList.remove('scroll-up');
+      header?.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && header?.classList.contains('scroll-down')) {
+      // Scroll Up
+      header?.classList.remove('scroll-down');
+      header?.classList.add('scroll-up');
+    }
+    lastScroll = currentScroll;
+  });
+
+  // Auth state management
+  const authButtons = document.getElementById('auth-buttons');
+  const userMenuContainer = document.getElementById('user-menu-container');
+  const mobileAuthButtons = document.getElementById('mobile-auth-buttons');
+  const mobileUserMenu = document.getElementById('mobile-user-menu');
+  const discordButtonContainer = document.getElementById('discord-button-container');
+
+  const updateAuthUI = (session: Session | null) => {
+    console.log('Updating auth UI with session:', session);
+    if (session?.user) {
+      console.log('User is logged in, showing user menu and discord button');
+      authButtons?.classList.add('hidden');
+      userMenuContainer?.classList.remove('hidden');
+      mobileAuthButtons?.classList.add('hidden');
+      mobileUserMenu?.classList.remove('hidden');
+      discordButtonContainer?.classList.remove('hidden');
+    } else {
+      console.log('User is not logged in, showing auth buttons');
+      authButtons?.classList.remove('hidden');
+      userMenuContainer?.classList.add('hidden');
+      mobileAuthButtons?.classList.remove('hidden');
+      mobileUserMenu?.classList.add('hidden');
+      discordButtonContainer?.classList.add('hidden');
+    }
+  };
+
+  // Listen for auth state changes
+  // TEMPORALMENTE DESHABILITADO - Causa conflictos
+  // supabase.auth.onAuthStateChange((event, session) => {
+  //   console.log('Auth state changed in Navbar:', event, session);
+  //   updateAuthUI(session);
+  // });
+
+  // Check initial auth state
+  const checkAuth = async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      console.log('Initial session in Navbar:', session);
+      updateAuthUI(session);
+    } catch (error) {
+      console.error('Error checking auth state:', error);
+      updateAuthUI(null);
+    }
+  };
+
+  // Inicializar auth cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, checking auth state...');
+    checkAuth();
+  });
+</script>
+
+<style>
+  header {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  header.scroll-down {
+    transform: translateY(-100%);
+  }
+
+  header.scroll-up {
+    transform: translateY(0);
+  }
+
+  .nav-container {
+    @apply flex items-center space-x-6 px-6 py-3 rounded-lg;
+    background: rgba(255, 0, 55, 0.1);
+    border: 1px solid rgba(255, 0, 55, 0.5);
+    box-shadow: 0 0 15px rgba(255, 0, 55, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-link {
+    @apply text-white transition-colors duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-redvelvet;
+  }
+</style>

@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import YoutubeStats from '../components/YoutubeStats.jsx';
+import CTA from '../components/CTA.astro';
+
+---
+
+<script>
+  // Inicializar el sistema de autenticación centralizado
+  import { initAuth } from '../lib/auth.js';
+  
+  // Inicializar auth cuando se carga la página
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      console.log('🚀 Inicializando sistema de autenticación...');
+      await initAuth();
+      console.log('✅ Sistema de autenticación inicializado correctamente');
+    } catch (error) {
+      console.error('❌ Error inicializando auth:', error);
+    }
+  });
+</script>
+
+<Layout title="CreatorLab - Boost Your YouTube Stats">
+  <!-- Adornos decorativos de fondo -->
+  <div class="adornos-responsive">
+    <img src="/images/ADORNOS.png" alt="Adornos decorativos" />
+  </div>
+  
+  <!-- Hero en la parte superior -->
+  <Hero />
+  
+  <!-- Espaciado para distribuir el contenido según el diseño del fondo -->
+  <div class="py-20"></div>
+  
+  <section id="servicios">
+    <Services />
+  </section>
+  
+  <!-- Imagen SOMOS.png debajo del slider -->
+  <section class="w-full flex justify-center items-center py-8">
+    <img src="/images/SOMOS.png" alt="Somos CreatorLab" class="w-[900px] h-auto" />
+  </section>
+  
+  <!-- Sección de Testimonios con imagen de fondo -->
+  <section id="testimonios" class="relative w-full">
+    <!-- Imagen de fondo TESTIMONIOS.png que se escala proporcionalmente -->
+    <div class="w-full flex justify-center">
+      <img src="/images/TESTIMONIOS.png" alt="Testimonios" class="w-[1920px] h-auto" />
+    </div>
+    
+    <!-- Contenedor para elementos que van dentro -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-full flex justify-center items-center">
+        <Testimonials />
+      </div>
+    </div>
+  </section>
+  
+  <div class="py-32"></div>
+  
+  <!-- Sección de Servicios con imagen de fondo -->
+  <section id="servicios-bg" class="relative w-full">
+    <!-- Imagen de fondo SERVICIOS.png que se escala proporcionalmente -->
+    <div class="w-full flex justify-center">
+      <img src="/images/SERVICIOS.png" alt="Servicios" class="w-[1920px] h-auto" />
+    </div>
+    
+    <!-- Contenedor para elementos que van dentro -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-full flex justify-center items-center">
+        <!-- <Services /> -->
+      </div>
+    </div>
+  </section>
+  
+  <div class="py-32"></div>
+  
+  <!-- Sección STATS con imagen a ancho completo del diseño -->
+  <section id="stats-bg" class="relative w-full z-20">
+    <div class="w-full flex justify-center z-0">
+      <img src="/images/STATS.png" alt="Stats" class="w-[1920px] h-auto" />
+    </div>
+
+    <!-- Contenido superpuesto: YoutubeStats -->
+    <div class="absolute inset-0 z-20 flex items-center justify-center">
+      <div class="w-full flex justify-center items-center">
+        <YoutubeStats client:load />
+      </div>
+    </div>
+  </section>
+  
+  <div class="py-32"></div>
+  
+  <!-- Contenedor EXTRAS a ancho completo -->
+  <section id="extras-bg" class="relative w-full -mt-24 md:-mt-28">
+    <div class="w-full flex justify-center">
+      <img src="/images/EXTRAS.png" alt="Extras" class="w-[1538px] h-[1171px]" />
+    </div>
+  </section>
+  
+  <!-- Eliminado espaciado extra y secciones entre EXTRAS y footer -->
+  <!-- <div class="py-32"></div> -->
+  
+  <!-- Sección 'nosotros' oculta temporalmente -->
+  <!--
+  <section id="nosotros">
+    <About />
+  </section>
+  
+
+  -->
+  
+  <!-- CTA oculto temporalmente -->
+  <!-- <CTA /> -->
+</Layout>

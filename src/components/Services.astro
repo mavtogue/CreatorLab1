@@ -1,0 +1,290 @@
+---
+import { FaChartLine, FaUsers, FaComments, FaSearchDollar, FaCog, FaLightbulb } from 'react-icons/fa';
+---
+
+<section id="services" class="section-padding relative z-10">
+  <div class="container mx-auto relative z-10">
+    <div class="text-center max-w-6xl mx-auto mb-16">
+      <h2 class="text-[93px] font-bold leading-tight"><span class="text-white">¿Cómo</span> <span class="text-redvelvet">funciona?</span></h2>
+      <p class="text-[41px] text-neutral-gray">
+        Ofrecemos soluciones integrales para ayudar a tu Presencia Digital a crecer y resaltar en el competitivo panorama actual
+      </p>
+    </div>
+
+    <!-- Slider de tarjetas -->
+    <div class="services-slider-container relative z-10">
+      <!-- Botón anterior -->
+      <button id="prev-btn" class="slider-btn slider-btn-left">‹</button>
+      
+      <div class="services-slider">
+        <div class="services-track" id="services-track">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet transition-all duration-300">
+              <FaChartLine className="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">Optimización de Análisis</h3>
+            <p class="text-neutral-gray">
+              Análisis profundo de las estadísticas de tu canal para identificar oportunidades de crecimiento y optimizar tu estrategia de contenido para maximizar el alcance.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet transition-all duration-300">
+              <FaUsers className="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">Crecimiento de Audiencia</h3>
+            <p class="text-neutral-gray">
+              Enfoques estratégicos para aumentar tu número de suscriptores y construir una comunidad fiel y comprometida alrededor de tu contenido.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet transition-all duration-300">
+              <FaComments className="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">Impulso de Engagement</h3>
+            <p class="text-neutral-gray">
+              Técnicas para aumentar los me gusta, comentarios y compartidos en tus vídeos, mejorando tu visibilidad en el algoritmo.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet transition-all duration-300">
+              <FaSearchDollar className="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">Estrategia de Monetización</h3>
+            <p class="text-neutral-gray">
+              Maximiza tus ingresos a través de la optimización de la colocación de anuncios, oportunidades de patrocinio, merchandising y otras fuentes de ingresos.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card">
+            <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet transition-all duration-300">
+              <FaCog className="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">Optimización del Canal</h3>
+            <p class="text-neutral-gray">
+              Auditoría y mejora integral de la configuración de tu canal, incluyendo SEO, miniaturas, descripciones y listas de reproducción.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card">
+            <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet transition-all duration-300">
+              <FaLightbulb className="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">Estrategia de Contenido</h3>
+            <p class="text-neutral-gray">
+              Planificación de contenido basada en datos para identificar temas de tendencia y crear vídeos que conecten con tu audiencia objetivo.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Botón siguiente -->
+      <button id="next-btn" class="slider-btn slider-btn-right">›</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-slider-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .services-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .services-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 2rem;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-card {
+    width: 370px;
+    height: 424px;
+    flex-shrink: 0;
+    border-radius: 36px;
+    border: 1.5px solid #FF0037;
+    background: rgba(0, 0, 0, 0.05);
+    background-blend-mode: plus-lighter;
+    box-shadow: 0 -203px 35.4px 0 rgba(255, 0, 55, 0.08) inset;
+    backdrop-filter: blur(7.58px);
+    padding: 2rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    transform: scale(0.9) translateY(44px);
+    opacity: 0.7;
+  }
+
+  .service-card h3 {
+    font-size: 24px;
+  }
+
+  .service-card p {
+    font-size: 18px;
+  }
+
+  .service-card.active {
+    width: 472px;
+    height: 512px;
+    flex-shrink: 0;
+    border-radius: 45px;
+    background: #FF0037;
+    background-blend-mode: plus-lighter;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    text-align: left;
+  }
+
+  .service-card.active h3 {
+    font-size: 28px;
+  }
+
+  .service-card.active p {
+    color: black !important;
+    font-size: 22px;
+  }
+
+  .service-card.active .w-14 {
+    color: black !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .service-card:hover {
+    transform: scale(1.05) translateY(44px);
+  }
+
+  .service-card.active:hover {
+    transform: scale(1.05) translateY(0px);
+  }
+
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 0, 55, 0.1);
+    border: 1px solid rgba(255, 0, 55, 0.3);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+  }
+
+  .slider-btn:hover {
+    background: rgba(255, 0, 55, 0.2);
+    border: 1px solid rgba(255, 0, 55, 0.5);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%);
+  }
+
+  .slider-btn-left {
+    left: 0;
+  }
+
+  .slider-btn-right {
+    right: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .service-card {
+      width: 280px;
+      height: 320px;
+      padding: 1.5rem;
+    }
+    
+    .service-card.active {
+      width: 320px;
+      height: 380px;
+    }
+    
+    .services-slider-container {
+      padding: 0 1rem;
+    }
+  }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 6;
+  const track = document.getElementById('services-track');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const cards = document.querySelectorAll('.service-card');
+
+  function updateSlider() {
+    // CENTRAR LA TARJETA ACTIVA EN EL MEDIO EXACTO DE LA PANTALLA
+    const sideCardWidth = 370;
+    const gap = 32;
+    const containerWidth = 1400;
+    
+    // Mover el track para que la tarjeta activa quede en el centro exacto
+    const translateX = (containerWidth / 2) - (sideCardWidth / 2) - (currentSlide * (sideCardWidth + gap)) + 80;
+    track.style.transform = `translateX(${translateX}px)`;
+    
+    // Update active card (middle card of the visible 3)
+    cards.forEach((card, index) => {
+      card.classList.remove('active');
+      if (index === currentSlide + 1) { // Middle card is active
+        card.classList.add('active');
+      }
+    });
+    
+    // Update button states
+    prevBtn.disabled = currentSlide === 0;
+    nextBtn.disabled = currentSlide >= totalSlides - 3;
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlider();
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlider();
+    }
+  });
+
+  // Initialize slider
+  document.addEventListener('DOMContentLoaded', () => {
+    updateSlider();
+  });
+</script>

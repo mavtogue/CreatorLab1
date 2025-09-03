@@ -1,0 +1,527 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { FaMedal, FaGem, FaDiscord, FaUsers, FaCrown, FaStar, FaRocket, FaShieldAlt, FaGift, FaHeadset, FaChartLine, FaLightbulb, FaTrophy, FaInfinity, FaHeart } from 'react-icons/fa';
+import PaymentButton from '../components/PaymentButton.jsx';
+---
+
+<Layout title="CreatorLab - Únete a Nuestra Comunidad">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-wineblack via-wineblack to-neutral-gray/20">
+    <!-- Background elements -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 opacity-[0.03] bg-gradient-to-br from-wineblack via-transparent to-transparent flex items-center justify-center">
+        <img src="/logos/LOGOWHITE.png" alt="" class="w-3/4 h-3/4 object-contain" />
+      </div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-redvelvet/20 rounded-full filter blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-redvelvet/10 rounded-full filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="container mx-auto px-4 z-10 pt-24">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 tracking-tight text-white">
+          Únete a Nuestra <span class="text-redvelvet">Comunidad</span>
+        </h1>
+        <p class="text-xl text-neutral-gray mb-8 max-w-3xl mx-auto">
+          Accede a recursos exclusivos, conéctate con creadores afines y desbloquea beneficios premium mientras creces. 
+          Nuestra comunidad Discord es el lugar donde los creadores de YouTube se convierten en expertos.
+        </p>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 mb-8">
+          <div class="text-center p-4">
+            <p class="text-3xl md:text-4xl font-bold text-redvelvet">5K+</p>
+            <p class="text-neutral-gray">Miembros Activos</p>
+          </div>
+          <div class="text-center p-4">
+            <p class="text-3xl md:text-4xl font-bold text-redvelvet">24/7</p>
+            <p class="text-neutral-gray">Soporte</p>
+          </div>
+          <div class="text-center p-4">
+            <p class="text-3xl md:text-4xl font-bold text-redvelvet">100+</p>
+            <p class="text-neutral-gray">Recursos Exclusivos</p>
+          </div>
+          <div class="text-center p-4">
+            <p class="text-3xl md:text-4xl font-bold text-redvelvet">6</p>
+            <p class="text-neutral-gray">Niveles de Membresía</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="btn-primary">
+            <FaDiscord className="inline mr-2" />
+            Unirse al Discord
+          </button>
+          <button class="btn-secondary">
+            Ver Planes
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Tiers Section -->
+  <section id="membership-tiers" class="section-padding relative overflow-hidden">
+    <div class="absolute left-0 top-1/4 w-64 h-64 bg-redvelvet/10 rounded-full filter blur-3xl"></div>
+    <div class="absolute right-0 bottom-1/4 w-96 h-96 bg-redvelvet/5 rounded-full filter blur-3xl"></div>
+    
+    <div class="container mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="section-title">Planes de <span class="text-redvelvet">Membresía</span></h2>
+        <p class="section-subtitle">
+          Elige el plan que mejor se adapte a tus necesidades y objetivos. Cada nivel desbloquea beneficios únicos 
+          diseñados para acelerar tu crecimiento en YouTube.
+        </p>
+      </div>
+      
+      <!-- Basic Tiers -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Bronze Tier -->
+        <div class="card relative overflow-hidden border border-[#CD7F32]/30 group hover:border-[#CD7F32] transition-all duration-300 hover:scale-105">
+          <!-- Badge -->
+          <div class="absolute top-0 right-0">
+            <div class="bg-[#CD7F32] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+              BRONCE
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 flex items-center justify-center mr-4">
+              <img src="/discord/BRONZE.png" alt="Rango Bronce" class="w-12 h-12" />
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Bronce</h3>
+              <p class="text-neutral-gray text-sm">Perfecto para principiantes</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <FaUsers className="w-4 h-4 text-[#CD7F32] mr-3" />
+              <span class="text-neutral-gray">Acceso al servidor Discord</span>
+            </div>
+            <div class="flex items-center">
+              <FaChartLine className="w-4 h-4 text-[#CD7F32] mr-3" />
+              <span class="text-neutral-gray">Análisis básico del canal</span>
+            </div>
+            <div class="flex items-center">
+              <FaHeadset className="w-4 h-4 text-[#CD7F32] mr-3" />
+              <span class="text-neutral-gray">Sesión mensual de Q&A</span>
+            </div>
+            <div class="flex items-center">
+              <FaGift className="w-4 h-4 text-[#CD7F32] mr-3" />
+              <span class="text-neutral-gray">Recursos básicos</span>
+            </div>
+            <div class="flex items-center">
+              <FaUsers className="w-4 h-4 text-[#CD7F32] mr-3" />
+              <span class="text-neutral-gray">Acceso a canales generales</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <button class="btn-secondary group-hover:bg-[#CD7F32] w-full">Gratis</button>
+          </div>
+        </div>
+        
+        <!-- Silver Tier -->
+        <div class="card relative overflow-hidden border border-[#C0C0C0]/30 group hover:border-[#C0C0C0] transform scale-105 z-10 shadow-lg">
+          <!-- Badge -->
+          <div class="absolute top-0 right-0">
+            <div class="bg-[#C0C0C0] text-wineblack text-xs font-bold py-1 px-3 rounded-bl-lg">
+              PLATA
+            </div>
+          </div>
+          
+          <!-- Recommended badge -->
+          <div class="absolute top-5 left-0">
+            <div class="bg-redvelvet text-white text-xs font-bold py-1 px-3 rounded-r-lg">
+              POPULAR
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 flex items-center justify-center mr-4">
+              <img src="/discord/PLATA.png" alt="Rango Plata" class="w-12 h-12" />
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Plata</h3>
+              <p class="text-neutral-gray text-sm">Para crecimiento acelerado</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <FaUsers className="w-4 h-4 text-[#C0C0C0] mr-3" />
+              <span class="text-neutral-gray">Todo de Bronce</span>
+            </div>
+            <div class="flex items-center">
+              <FaChartLine className="w-4 h-4 text-[#C0C0C0] mr-3" />
+              <span class="text-neutral-gray">Panel de análisis avanzado</span>
+            </div>
+            <div class="flex items-center">
+              <FaHeadset className="w-4 h-4 text-[#C0C0C0] mr-3" />
+              <span class="text-neutral-gray">Coaching quincenal</span>
+            </div>
+            <div class="flex items-center">
+              <FaGift className="w-4 h-4 text-[#C0C0C0] mr-3" />
+              <span class="text-neutral-gray">Revisión de miniaturas</span>
+            </div>
+            <div class="flex items-center">
+              <FaRocket className="w-4 h-4 text-[#C0C0C0] mr-3" />
+              <span class="text-neutral-gray">Estrategias de crecimiento</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <PaymentButton 
+              plan="silver"
+              price="$29/mes"
+              tier="Plata"
+              className="btn-primary w-full"
+            >
+              $29/mes
+            </PaymentButton>
+          </div>
+        </div>
+        
+        <!-- Gold Tier -->
+        <div class="card relative overflow-hidden border border-[#FFD700]/30 group hover:border-[#FFD700] transition-all duration-300 hover:scale-105">
+          <!-- Badge -->
+          <div class="absolute top-0 right-0">
+            <div class="bg-[#FFD700] text-wineblack text-xs font-bold py-1 px-3 rounded-bl-lg">
+              ORO
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 flex items-center justify-center mr-4">
+              <img src="/discord/ORO.png" alt="Rango Oro" class="w-12 h-12" />
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Oro</h3>
+              <p class="text-neutral-gray text-sm">Para creadores serios</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <FaUsers className="w-4 h-4 text-[#FFD700] mr-3" />
+              <span class="text-neutral-gray">Todo de Plata</span>
+            </div>
+            <div class="flex items-center">
+              <FaCrown className="w-4 h-4 text-[#FFD700] mr-3" />
+              <span class="text-neutral-gray">Sesiones semanales</span>
+            </div>
+            <div class="flex items-center">
+              <FaChartLine className="w-4 h-4 text-[#FFD700] mr-3" />
+              <span class="text-neutral-gray">Análisis de competencia</span>
+            </div>
+            <div class="flex items-center">
+              <FaShieldAlt className="w-4 h-4 text-[#FFD700] mr-3" />
+              <span class="text-neutral-gray">Soporte prioritario</span>
+            </div>
+            <div class="flex items-center">
+              <FaTrophy className="w-4 h-4 text-[#FFD700] mr-3" />
+              <span class="text-neutral-gray">Acceso VIP</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <PaymentButton 
+              plan="gold"
+              price="$79/mes"
+              tier="Oro"
+              className="btn-secondary group-hover:bg-[#FFD700] group-hover:text-wineblack w-full"
+            >
+              $79/mes
+            </PaymentButton>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Premium Tiers -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <!-- Diamond Tier -->
+        <div class="card relative overflow-hidden border border-[#B9F2FF]/30 group hover:border-[#B9F2FF] transition-all duration-300 hover:scale-105">
+          <!-- Badge -->
+          <div class="absolute top-0 right-0">
+            <div class="bg-gradient-to-r from-[#B9F2FF] to-[#A7E4FF] text-wineblack text-xs font-bold py-1 px-3 rounded-bl-lg">
+              DIAMANTE
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 flex items-center justify-center mr-4">
+              <img src="/discord/DIAMANTE.png" alt="Rango Diamante" class="w-12 h-12" />
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Diamante</h3>
+              <p class="text-neutral-gray text-sm">Coaching de élite</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <FaGem className="w-4 h-4 text-[#B9F2FF] mr-3" />
+              <span class="text-neutral-gray">Todo de Oro</span>
+            </div>
+            <div class="flex items-center">
+              <FaCrown className="w-4 h-4 text-[#B9F2FF] mr-3" />
+              <span class="text-neutral-gray">Coaching personalizado 1:1</span>
+            </div>
+            <div class="flex items-center">
+              <FaStar className="w-4 h-4 text-[#B9F2FF] mr-3" />
+              <span class="text-neutral-gray">Estrategias exclusivas</span>
+            </div>
+            <div class="flex items-center">
+              <FaInfinity className="w-4 h-4 text-[#B9F2FF] mr-3" />
+              <span class="text-neutral-gray">Soporte ilimitado</span>
+            </div>
+            <div class="flex items-center">
+              <FaTrophy className="w-4 h-4 text-[#B9F2FF] mr-3" />
+              <span class="text-neutral-gray">Acceso a eventos exclusivos</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <PaymentButton 
+              plan="diamond"
+              price="$199/mes"
+              tier="Diamante"
+              className="btn-primary w-full"
+            >
+              $199/mes
+            </PaymentButton>
+          </div>
+        </div>
+        
+        <!-- Diamond+ Tier -->
+        <div class="card relative overflow-hidden border border-[#FF69B4]/30 group hover:border-[#FF69B4] transition-all duration-300 hover:scale-105">
+          <!-- Badge -->
+          <div class="absolute top-0 right-0">
+            <div class="bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+              DIAMANTE+
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 flex items-center justify-center mr-4">
+              <img src="/discord/DIAMANTE+.png" alt="Rango Diamante+" class="w-12 h-12" />
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Diamante+</h3>
+              <p class="text-neutral-gray text-sm">Experiencia premium total</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <FaGem className="w-4 h-4 text-[#FF69B4] mr-3" />
+              <span class="text-neutral-gray">Todo de Diamante</span>
+            </div>
+            <div class="flex items-center">
+              <FaCrown className="w-4 h-4 text-[#FF69B4] mr-3" />
+              <span class="text-neutral-gray">Mentoría personalizada</span>
+            </div>
+            <div class="flex items-center">
+              <FaStar className="w-4 h-4 text-[#FF69B4] mr-3" />
+              <span class="text-neutral-gray">Contenido exclusivo</span>
+            </div>
+            <div class="flex items-center">
+              <FaRocket className="w-4 h-4 text-[#FF69B4] mr-3" />
+              <span class="text-neutral-gray">Crecimiento garantizado</span>
+            </div>
+            <div class="flex items-center">
+              <FaTrophy className="w-4 h-4 text-[#FF69B4] mr-3" />
+              <span class="text-neutral-gray">Acceso a red de creadores</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <PaymentButton 
+              plan="diamond-plus"
+              price="$399/mes"
+              tier="Diamante+"
+              className="btn-secondary group-hover:bg-[#FF69B4] w-full"
+            >
+              $399/mes
+            </PaymentButton>
+          </div>
+        </div>
+      </div>
+
+      <!-- Server Booster -->
+      <div class="max-w-2xl mx-auto">
+        <div class="card relative overflow-hidden border border-[#FF6B6B]/30 group hover:border-[#FF6B6B] transition-all duration-300 hover:scale-105">
+          <!-- Badge -->
+          <div class="absolute top-0 right-0">
+            <div class="bg-gradient-to-r from-[#FF6B6B] to-[#FF5252] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+              SERVER BOOSTER
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 flex items-center justify-center mr-4">
+              <img src="/discord/SERVERBOOSTER.png" alt="Server Booster" class="w-12 h-12" />
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-1">Server Booster</h3>
+              <p class="text-neutral-gray text-sm">Apoya nuestra comunidad</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center">
+              <FaStar className="w-4 h-4 text-[#FF6B6B] mr-3" />
+              <span class="text-neutral-gray">Badge exclusivo de Server Booster</span>
+            </div>
+            <div class="flex items-center">
+              <FaGift className="w-4 h-4 text-[#FF6B6B] mr-3" />
+              <span class="text-neutral-gray">Acceso a canales exclusivos</span>
+            </div>
+            <div class="flex items-center">
+              <FaCrown className="w-4 h-4 text-[#FF6B6B] mr-3" />
+              <span class="text-neutral-gray">Prioridad en el servidor</span>
+            </div>
+            <div class="flex items-center">
+              <FaHeart className="w-4 h-4 text-[#FF6B6B] mr-3" />
+              <span class="text-neutral-gray">Nuestro agradecimiento eterno</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <PaymentButton 
+              plan="server-booster"
+              price="$9.99/mes"
+              tier="Server Booster"
+              className="btn-primary w-full"
+            >
+              $9.99/mes
+            </PaymentButton>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding bg-neutral-gray/5">
+    <div class="container mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="section-title">¿Por qué unirse a <span class="text-redvelvet">CreatorLab</span>?</h2>
+        <p class="section-subtitle">
+          Nuestra comunidad está diseñada para acelerar tu crecimiento como creador de contenido.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card group">
+          <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet group-hover:bg-redvelvet group-hover:text-white transition-all duration-300">
+            <FaUsers className="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Comunidad Activa</h3>
+          <p class="text-neutral-gray">
+            Conecta con miles de creadores que comparten tus mismos objetivos y desafíos.
+          </p>
+        </div>
+
+        <div class="card group">
+          <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet group-hover:bg-redvelvet group-hover:text-white transition-all duration-300">
+            <FaChartLine className="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Análisis Avanzado</h3>
+          <p class="text-neutral-gray">
+            Herramientas y métricas que te ayudan a entender y optimizar tu rendimiento.
+          </p>
+        </div>
+
+        <div class="card group">
+          <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet group-hover:bg-redvelvet group-hover:text-white transition-all duration-300">
+            <FaLightbulb className="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Estrategias Probadas</h3>
+          <p class="text-neutral-gray">
+            Métodos que han ayudado a miles de creadores a alcanzar el éxito.
+          </p>
+        </div>
+
+        <div class="card group">
+          <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet group-hover:bg-redvelvet group-hover:text-white transition-all duration-300">
+            <FaHeadset className="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Soporte 24/7</h3>
+          <p class="text-neutral-gray">
+            Siempre hay alguien disponible para ayudarte con tus preguntas y dudas.
+          </p>
+        </div>
+
+        <div class="card group">
+          <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet group-hover:bg-redvelvet group-hover:text-white transition-all duration-300">
+            <FaRocket className="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Crecimiento Acelerado</h3>
+          <p class="text-neutral-gray">
+            Ve resultados reales en tu canal con nuestras estrategias optimizadas.
+          </p>
+        </div>
+
+        <div class="card group">
+          <div class="w-14 h-14 bg-redvelvet/10 rounded-full flex items-center justify-center mb-6 text-redvelvet group-hover:bg-redvelvet group-hover:text-white transition-all duration-300">
+            <FaTrophy className="w-6 h-6" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Recursos Exclusivos</h3>
+          <p class="text-neutral-gray">
+            Contenido y herramientas que no encontrarás en ningún otro lugar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-redvelvet/10 via-transparent to-redvelvet/5"></div>
+    
+    <div class="container mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="section-title">¿Listo para <span class="text-redvelvet">Transformar</span> tu Canal?</h2>
+        <p class="section-subtitle">
+          Únete a miles de creadores que ya han acelerado su crecimiento con CreatorLab. 
+          Tu éxito en YouTube está a solo un clic de distancia.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <button class="btn-primary">
+            <FaDiscord className="inline mr-2" />
+            Unirse Ahora
+          </button>
+          <button class="btn-secondary">
+            Ver Planes Detallados
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Smooth scroll para los botones
+  document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', (e) => {
+      if (button.textContent && button.textContent.includes('Ver Planes')) {
+        e.preventDefault();
+        const element = document.querySelector('#membership-tiers');
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth' 
+          });
+        }
+      }
+    });
+  });
+</script> 

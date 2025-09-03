@@ -1,0 +1,91 @@
+---
+import { FaYoutube, FaLightbulb, FaUsers } from 'react-icons/fa';
+---
+
+<section id="about" class="section-padding relative overflow-hidden">
+  <!-- Background decorative element -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-neutral-gray/5 -skew-x-12 transform origin-top-right z-0"></div>
+  
+  <div class="container mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- About content -->
+      <div>
+        <h2 class="section-title">Quiénes <span class="text-redvelvet">Somos</span></h2>
+        <p class="text-neutral-gray mb-8">
+          CreatorLab fue fundado por un equipo de expertos en análisis de YouTube, creadores de contenido y especialistas en marketing digital que comprenden los desafíos de hacer crecer un canal en el competitivo panorama actual.
+        </p>
+        <p class="text-neutral-gray mb-8">
+          Hemos ayudado a miles de creadores a transformar sus canales de una situación de estancamiento a un crecimiento constante, combinando estrategias basadas en datos con enfoques creativos que cautivan a las audiencias.
+        </p>
+        
+        <!-- Core values -->
+        <div class="space-y-6 mt-10">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-redvelvet/10 rounded-full flex items-center justify-center shrink-0 text-redvelvet">
+              <FaYoutube className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Enfoque Centrado en el Creador</h3>
+              <p class="text-neutral-gray">Priorizamos tu voz y visión única mientras optimizamos para el crecimiento.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-redvelvet/10 rounded-full flex items-center justify-center shrink-0 text-redvelvet">
+              <FaLightbulb className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Innovación Basada en Datos</h3>
+              <p class="text-neutral-gray">Nuestras estrategias se construyen sobre análisis, pruebas y mejora continua.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-redvelvet/10 rounded-full flex items-center justify-center shrink-0 text-redvelvet">
+              <FaUsers className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Enfoque en la Comunidad</h3>
+              <p class="text-neutral-gray">Creemos en construir comunidades comprometidas, no solo en inflar números.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Team/Image section -->
+      <div class="relative">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="bg-neutral-gray/10 h-60 rounded-lg overflow-hidden">
+              <div class="w-full h-full bg-gradient-to-br from-redvelvet/20 to-neutral-gray/20 flex items-center justify-center">
+                <span class="text-5xl">📊</span>
+              </div>
+            </div>
+            <div class="bg-neutral-gray/10 h-40 rounded-lg overflow-hidden">
+              <div class="w-full h-full bg-gradient-to-br from-neutral-gray/20 to-redvelvet/20 flex items-center justify-center">
+                <span class="text-5xl">💡</span>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4 mt-8">
+            <div class="bg-neutral-gray/10 h-40 rounded-lg overflow-hidden">
+              <div class="w-full h-full bg-gradient-to-tl from-redvelvet/20 to-neutral-gray/20 flex items-center justify-center">
+                <span class="text-5xl">🚀</span>
+              </div>
+            </div>
+            <div class="bg-neutral-gray/10 h-60 rounded-lg overflow-hidden">
+              <div class="w-full h-full bg-gradient-to-tr from-neutral-gray/20 to-redvelvet/20 flex items-center justify-center">
+                <span class="text-5xl">📈</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stats badge -->
+        <div class="absolute -bottom-6 -left-6 bg-redvelvet text-white py-3 px-6 rounded-lg shadow-lg z-20">
+          <p class="font-bold">Confiado por más de 10.000 creadores</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

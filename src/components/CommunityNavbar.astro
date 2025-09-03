@@ -1,0 +1,170 @@
+---
+import { supabase } from '../lib/supabase';
+import UserMenu from './UserMenu';
+import type { Session } from '@supabase/supabase-js';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-wineblack/95 backdrop-blur-sm">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img src="/logos/NAMEWHITE.png" alt="CreatorLab Logo" class="h-6 w-auto" />
+      </a>
+
+      <!-- Community Title -->
+      <div class="hidden lg:block">
+        <h1 class="text-xl font-bold text-white">Comunidad CreatorLab</h1>
+      </div>
+
+      <!-- Navigation & Auth -->
+      <div class="flex items-center space-x-6">
+        <a href="/" class="bg-redvelvet text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all font-medium">
+          Inicio
+        </a>
+        
+        <!-- Auth Buttons / User Menu -->
+        <div class="flex items-center space-x-4">
+          <div id="auth-buttons" class="flex items-center space-x-4">
+            <button
+              onclick="document.dispatchEvent(new CustomEvent('open-login-modal'))"
+              class="text-white hover:text-redvelvet transition-colors"
+            >
+              Iniciar Sesión
+            </button>
+            <button
+              onclick="document.dispatchEvent(new CustomEvent('open-register-modal'))"
+              class="bg-redvelvet text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
+            >
+              Registrarse
+            </button>
+          </div>
+          <div id="user-menu-container" class="hidden">
+            <UserMenu client:load />
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden text-white hover:text-redvelvet transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden mt-4">
+      <!-- Mobile Title -->
+      <div class="mb-4">
+        <h1 class="text-lg font-bold text-white">Comunidad CreatorLab</h1>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div class="mb-4">
+        <a href="/" class="w-full bg-redvelvet text-white px-4 py-3 rounded-md hover:bg-opacity-90 transition-all font-medium text-center block">
+          Volver al Inicio
+        </a>
+      </div>
+      
+      <!-- Mobile Auth Buttons -->
+      <div id="mobile-auth-buttons" class="mt-4 space-y-4">
+        <button
+          onclick="document.dispatchEvent(new CustomEvent('open-login-modal'))"
+          class="w-full text-white hover:text-redvelvet transition-colors"
+        >
+          Iniciar Sesión
+        </button>
+        <button
+          onclick="document.dispatchEvent(new CustomEvent('open-register-modal'))"
+          class="w-full bg-redvelvet text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
+        >
+          Registrarse
+        </button>
+      </div>
+      
+      <!-- Mobile User Menu -->
+      <div id="mobile-user-menu" class="hidden mt-4">
+        <UserMenu client:load />
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { supabase } from '../lib/supabase';
+  import type { Session } from '@supabase/supabase-js';
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Auth state management
+  const authButtons = document.getElementById('auth-buttons');
+  const userMenuContainer = document.getElementById('user-menu-container');
+  const mobileAuthButtons = document.getElementById('mobile-auth-buttons');
+  const mobileUserMenu = document.getElementById('mobile-user-menu');
+
+  const updateAuthUI = (session: Session | null) => {
+    console.log('Updating auth UI with session:', session);
+    if (session?.user) {
+      console.log('User is logged in, showing user menu');
+      authButtons?.classList.add('hidden');
+      userMenuContainer?.classList.remove('hidden');
+      mobileAuthButtons?.classList.add('hidden');
+      mobileUserMenu?.classList.remove('hidden');
+    } else {
+      console.log('User is not logged in, showing auth buttons');
+      authButtons?.classList.remove('hidden');
+      userMenuContainer?.classList.add('hidden');
+      mobileAuthButtons?.classList.remove('hidden');
+      mobileUserMenu?.classList.add('hidden');
+    }
+  };
+
+  // Listen for auth state changes
+  // TEMPORALMENTE DESHABILITADO - Causa conflictos
+  // supabase.auth.onAuthStateChange((event, session) => {
+  //   console.log('Auth state changed in CommunityNavbar:', event, session);
+  //   updateAuthUI(session);
+  // });
+
+  // Check initial auth state
+  const checkAuth = async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      console.log('Initial session in CommunityNavbar:', session);
+      updateAuthUI(session);
+    } catch (error) {
+      console.error('Error checking auth state:', error);
+      updateAuthUI(null);
+    }
+  };
+
+  // Inicializar auth cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, checking auth state...');
+    checkAuth();
+  });
+</script>
+
+<style>
+  header {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  header.scroll-down {
+    transform: translateY(-100%);
+  }
+
+  header.scroll-up {
+    transform: translateY(0);
+  }
+</style> 
