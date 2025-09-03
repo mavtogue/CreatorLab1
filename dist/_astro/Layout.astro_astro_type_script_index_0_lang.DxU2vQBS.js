@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_astro/auth.X6xTLyTi.js","_astro/supabase.Bouij7RW.js","_astro/_commonjsHelpers.gnU0ypJ3.js","_astro/preload-helper.BlTxHScW.js"])))=>i.map(i=>d[i]);
+import{_ as a}from"./preload-helper.BlTxHScW.js";document.addEventListener("DOMContentLoaded",async()=>{try{const{initAuth:t}=await a(async()=>{const{initAuth:r}=await import("./auth.X6xTLyTi.js");return{initAuth:r}},__vite__mapDeps([0,1,2,3]));await t()}catch(t){console.error("Error al inicializar auth:",t)}});
